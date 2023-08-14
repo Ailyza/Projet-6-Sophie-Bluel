@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+	<meta charset="UTF-8">
+	<title>Sophie Bluel - Architecte d'intérieur</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Work+Sans&display=swap"
+		rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+		integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+		crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<meta name="description" content="">
+	<link rel="stylesheet" href="https://fontawesome.com/icons/image?f=sharp&s=light">
+	<link rel="stylesheet" href="assets/style.css">
+</head>
+
+<body>
+	<!-- Changement avec Token -->
+	<div class="editMode" id="editMode">
+		<i class="fa-regular fa-pen-to-square"></i>
+		<p>Mode édition</p>
+		<button>publier les changements</button>
+	</div>
+
+	<header>
+		<h1>Sophie Bluel <span>Architecte d'intérieur</span></h1>
+		<nav>
+			<ul>
+				<li><a href="#page-projet">projets</a></li>
+				<li>contact</li>
+				<li  id="page-connexion"><a href="page-connexion/connexion.html">login</a></li>
+				<li class="editMode" id="deco"> <a href="page-connexion/connexion.html"></a> se déconnecter</li>
+				<li><img src="./assets/icons/instagram.png" alt="Instagram"></li>
+			</ul>
+		</nav>
+	</header>
+
+	<main>
+		<section id="introduction">
+			<figure>
+				<img src="./assets/images/sophie-bluel.png" alt="">
+				<div class="editMode">
+					<i class="fa-regular fa-pen-to-square"></i>
+				modifier
+			</div>
+			</figure>
+			<article>
+				<h2>Designer d'espace</h2>
+				<p>Je raconte votre histoire, je valorise vos idées. Je vous accompagne de la conception à la livraison
+					finale du chantier.</p>
+				<p>Chaque projet sera étudié en commun, de façon à mettre en valeur les volumes, les matières et les
+					couleurs dans le respect de l’esprit des lieux et le choix adapté des matériaux. Le suivi du
+					chantier sera assuré dans le souci du détail, le respect du planning et du budget.</p>
+				<p>En cas de besoin, une équipe pluridisciplinaire peut-être constituée : architecte DPLG,
+					décorateur(trice)</p>
+			</article>
+
+		</section>
+		<section id="portfolio">
+			<h2>Mes Projets</h2>
+			<div id="bouttonEdit"></div>
+			<ul class="filterContainer"></ul>
+			<div class="gallery"></div>
+		</section>
+		<section id="contact">
+			<h2>Contact</h2>
+			<p>Vous avez un projet ? Discutons-en !</p>
+			<form action="#" method="post">
+				<label for="name">Nom</label>
+				<input type="text" name="name" id="name">
+				<label for="email">Email</label>
+				<input type="email" name="email" id="email">
+				<label for="message">Message</label>
+				<textarea name="message" id="message" cols="30" rows="10"></textarea>
+				<input type="submit" value="Envoyer">
+			</form>
+		</section>
+	</main>
+
+	<footer>
+		<nav>
+			<ul>
+				<li>Mentions Légales</li>
+			</ul>
+		</nav>
+	</footer>
+
+	<!-- LA MODALE -->
+	<aside id="modal" class="modal">
+		<div class="modalContainer" aria-hidden="true">
+			<img src="assets/icons/xmark-solid.png" alt="fermer la modal" class="closeBtn" id="closeBtn">
+			<div class="modalPage1" id="modalPage1">
+				<h2 class="modalTitre">Galerie photo</h2>
+				<div id="modalGallerie" class="galleryContainer">
+					<!-- <img src="assets/images/abajour-tahina.png" class="galleryImage"> -->
+				</div>
+				<!-- supprimer les images -->
+				<!-- <div class="modalDeleteButton"><img src="assets/icons/delete.png" alt="inone pour supprimer"></div> -->
+				<hr>
+				<button class="modalButton" id="modalButton">Ajouter une photo</button>
+				<p class="supprime">Supprimer la gallery</p>
+			</div>
+			<div class="modalPage2" id="modalPage2">
+				<img src="assets/icons/arrow-left.png" alt="modal précédente" id="arrow-left">
+				<h2 class="modalTitre">Ajouter photo</h2>
+				<form id="postWorkForm">
+					<div class="photoContainer">
+						<div id="beforeImg">
+							<i class="fa-regular fa-image"></i>
+
+							<label for="inputFile"> + Ajouter photo</label>
+							<input type="file" id="inputFile" name="image" accept="image/jpeg, image/png"
+								style="display: none;">
+							<p>jpg, png : 4 mo max</p>
+						</div>
+					</div>
+					<div>
+					</div>
+					<div class="titleCategory">
+						<label for="titre">Title</label>
+						<input type="text" class="title-category" name="title" id="title">
+						<p id="titleError"></p>
+						<label for="category">Catégorie</label>
+						<select id="category" class="title-category" name="category"></select>
+						<hr>
+						<button class="modalbutton2" id="valider" disabled>valider</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</aside>
+
+	<script src="assets/script.js"></script>
+	<script src="assets/modal.js"></script>
+</body>
+
+</html>
